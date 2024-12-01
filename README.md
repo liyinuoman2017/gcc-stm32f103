@@ -1143,7 +1143,9 @@ clean:
 **希望获取源码的朋友可以在评论区留言**
 
 
-**创作不易希望朋友们点赞，转发，评论，关注!
-您的点赞，转发，评论，关注将是我持续更新的动力!
-CSDN：https://blog.csdn.net/li_man_man_man
-今日头条：https://www.toutiao.com/article/7149576260891443724**
+**创作不易希望朋友们点赞，转发，评论，关注!**
+**您的点赞，转发，评论，关注将是我持续更新的动力!**
+
+**CSDN：https://blog.csdn.net/li_man_man_man**
+
+**今日头条：https://www.toutiao.com/article/7149576260891443724**
