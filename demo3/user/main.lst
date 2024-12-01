@@ -1,0 +1,833 @@
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   5              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   6              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   7              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   8              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   9              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+  10              		.eabi_attribute 30, 4	@ Tag_ABI_optimization_goals
+  11              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  12              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  13              		.file	"main.c"
+  14              	@ GNU C17 (GNU Arm Embedded Toolchain 10.3-2021.10) version 10.3.1 20210824 (release) (arm-none-eab
+  15              	@	compiled by GNU C version 7.3-win32 20180312, GMP version 6.1.0, MPFR version 3.1.4, MPC version 
+  16              	
+  17              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  18              	@ options passed:  -I . -I ./user -imultilib thumb/v7-m/nofp
+  19              	@ -iprefix c:\program files (x86)\gnu arm embedded toolchain\10 2021.10\bin\../lib/gcc/arm-none-eab
+  20              	@ -isysroot c:\program files (x86)\gnu arm embedded toolchain\10 2021.10\bin\../arm-none-eabi
+  21              	@ -D__USES_INITFINI__ user/main.c -mcpu=cortex-m3 -mthumb -mfloat-abi=soft
+  22              	@ -mlibarch=armv7-m -march=armv7-m -auxbase-strip user/main.o -g -gdwarf-2
+  23              	@ -Os -Wall -fomit-frame-pointer -fverbose-asm
+  24              	@ options enabled:  -faggressive-loop-optimizations -fallocation-dce
+  25              	@ -fauto-inc-dec -fbranch-count-reg -fcaller-saves -fcode-hoisting
+  26              	@ -fcombine-stack-adjustments -fcompare-elim -fcprop-registers
+  27              	@ -fcrossjumping -fcse-follow-jumps -fdefer-pop
+  28              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+  29              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-symbols
+  30              	@ -feliminate-unused-debug-types -fexpensive-optimizations
+  31              	@ -fforward-propagate -ffp-int-builtin-inexact -ffunction-cse -fgcse
+  32              	@ -fgcse-lm -fgnu-unique -fguess-branch-probability -fhoist-adjacent-loads
+  33              	@ -fident -fif-conversion -fif-conversion2 -findirect-inlining -finline
+  34              	@ -finline-atomics -finline-functions -finline-functions-called-once
+  35              	@ -finline-small-functions -fipa-bit-cp -fipa-cp -fipa-icf
+  36              	@ -fipa-icf-functions -fipa-icf-variables -fipa-profile -fipa-pure-const
+  37              	@ -fipa-ra -fipa-reference -fipa-reference-addressable -fipa-sra
+  38              	@ -fipa-stack-alignment -fipa-vrp -fira-hoist-pressure
+  39              	@ -fira-share-save-slots -fira-share-spill-slots
+  40              	@ -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+  41              	@ -fleading-underscore -flifetime-dse -flra-remat -fmath-errno
+  42              	@ -fmerge-constants -fmerge-debug-strings -fmove-loop-invariants
+  43              	@ -fomit-frame-pointer -foptimize-sibling-calls -fpartial-inlining
+  44              	@ -fpeephole -fpeephole2 -fplt -fprefetch-loop-arrays -freg-struct-return
+  45              	@ -freorder-blocks -freorder-functions -frerun-cse-after-loop
+  46              	@ -fsched-critical-path-heuristic -fsched-dep-count-heuristic
+  47              	@ -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
+  48              	@ -fsched-pressure -fsched-rank-heuristic -fsched-spec
+  49              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns2
+  50              	@ -fsection-anchors -fsemantic-interposition -fshow-column
+  51              	@ -fshrink-wrap-separate -fsigned-zeros -fsplit-ivs-in-unroller
+  52              	@ -fsplit-wide-types -fssa-backprop -fssa-phiopt -fstdarg-opt
+  53              	@ -fstore-merging -fstrict-aliasing -fstrict-volatile-bitfields
+  54              	@ -fsync-libcalls -fthread-jumps -ftoplevel-reorder -ftrapping-math
+  55              	@ -ftree-bit-ccp -ftree-builtin-call-dce -ftree-ccp -ftree-ch
+  56              	@ -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim -ftree-dce
+  57              	@ -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 2
+
+
+  58              	@ -ftree-loop-distribute-patterns -ftree-loop-if-convert -ftree-loop-im
+  59              	@ -ftree-loop-ivcanon -ftree-loop-optimize -ftree-parallelize-loops=
+  60              	@ -ftree-phiprop -ftree-pre -ftree-pta -ftree-reassoc -ftree-scev-cprop
+  61              	@ -ftree-sink -ftree-slsr -ftree-sra -ftree-switch-conversion
+  62              	@ -ftree-tail-merge -ftree-ter -ftree-vrp -funit-at-a-time -fvar-tracking
+  63              	@ -fvar-tracking-assignments -fverbose-asm -fzero-initialized-in-bss
+  64              	@ -masm-syntax-unified -mbe32 -mfix-cortex-m3-ldrd -mlittle-endian
+  65              	@ -mpic-data-is-text-relative -msched-prolog -mthumb -munaligned-access
+  66              	@ -mvectorize-with-neon-quad
+  67              	
+  68              		.text
+  69              	.Ltext0:
+  70              		.cfi_sections	.debug_frame
+  71              		.align	1
+  72              		.global	delay
+  73              		.syntax unified
+  74              		.thumb
+  75              		.thumb_func
+  76              		.type	delay, %function
+  77              	delay:
+  78              	.LVL0:
+  79              	.LFB0:
+  80              		.file 1 "user/main.c"
+   1:user/main.c   **** /**
+   2:user/main.c   **** ***************************************************************************************************
+   3:user/main.c   **** *                                      (c) Copyright 2024-2032
+   4:user/main.c   **** *                                         All Rights Reserved
+   5:user/main.c   **** * @By      : liwei
+   6:user/main.c   **** ***************************************************************************************************
+   7:user/main.c   **** **/
+   8:user/main.c   **** typedef unsigned int  uint32_t;
+   9:user/main.c   **** typedef unsigned short  uint16_t;
+  10:user/main.c   **** // 定义STM32F103的寄存器基地址
+  11:user/main.c   **** #define STM32_RCC_BASE          0x40021000   
+  12:user/main.c   **** #define STM32_GPIOB_BASE        0x40010C00   
+  13:user/main.c   **** 
+  14:user/main.c   **** // 定义寄存器偏移
+  15:user/main.c   **** #define RCC_APB2ENR_OFFSET      0x18   
+  16:user/main.c   **** #define GPIOB_CRL_OFFSET        0x00  
+  17:user/main.c   **** #define GPIOB_CRH_OFFSET        0x04  
+  18:user/main.c   **** #define GPIOB_ODR_OFFSET        0x0C  
+  19:user/main.c   **** 
+  20:user/main.c   **** // 定义寄存器地址
+  21:user/main.c   **** #define RCC_APB2ENR_REG         (*(volatile uint32_t *)(STM32_RCC_BASE + RCC_APB2ENR_OFFSET))
+  22:user/main.c   **** #define GPIOB_CRL_REG           (*(volatile uint32_t *)(STM32_GPIOB_BASE + GPIOB_CRH_OFFSET))
+  23:user/main.c   **** #define GPIOB_ODR_REG           (*(volatile uint16_t *)(STM32_GPIOB_BASE + GPIOB_ODR_OFFSET))
+  24:user/main.c   **** 
+  25:user/main.c   **** // 定义位掩码
+  26:user/main.c   **** #define RCC_APB2ENR_IOPBEN      ((uint32_t)0x00000008)  
+  27:user/main.c   **** #define GPIO_MODE_OUT_50MHZ     ((uint32_t)0x0002)      
+  28:user/main.c   **** #define GPIO_CNF_PP             ((uint32_t)0x0000)      
+  29:user/main.c   **** #define GPIO_PIN15              ((uint16_t)0x8000)     
+  30:user/main.c   **** /**************************************************************************************************
+  31:user/main.c   **** * @描述	: 延时函数
+  32:user/main.c   **** ***************************************************************************************************
+  33:user/main.c   **** void delay(volatile uint32_t count) 
+  34:user/main.c   **** {
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 3
+
+
+  81              		.loc 1 34 1 view -0
+  82              		.cfi_startproc
+  83              		@ args = 0, pretend = 0, frame = 8
+  84              		@ frame_needed = 0, uses_anonymous_args = 0
+  85              		@ link register save eliminated.
+  86              		.loc 1 34 1 is_stmt 0 view .LVU1
+  87 0000 82B0     		sub	sp, sp, #8	@,,
+  88              	.LCFI0:
+  89              		.cfi_def_cfa_offset 8
+  90 0002 0190     		str	r0, [sp, #4]	@ count, count
+  35:user/main.c   ****     while (count--) 
+  91              		.loc 1 35 5 is_stmt 1 view .LVU2
+  92              	.L2:
+  36:user/main.c   **** 	{
+  37:user/main.c   ****         // 空循环
+  38:user/main.c   ****     }
+  93              		.loc 1 38 5 discriminator 1 view .LVU3
+  35:user/main.c   ****     while (count--) 
+  94              		.loc 1 35 11 discriminator 1 view .LVU4
+  95              	@ user/main.c:35:     while (count--) 
+  35:user/main.c   ****     while (count--) 
+  96              		.loc 1 35 17 is_stmt 0 discriminator 1 view .LVU5
+  97 0004 019B     		ldr	r3, [sp, #4]	@ count.0_1, count
+  98 0006 5A1E     		subs	r2, r3, #1	@ _2, count.0_1,
+  99 0008 0192     		str	r2, [sp, #4]	@ _2, count
+ 100              	@ user/main.c:35:     while (count--) 
+  35:user/main.c   ****     while (count--) 
+ 101              		.loc 1 35 11 discriminator 1 view .LVU6
+ 102 000a 002B     		cmp	r3, #0	@ count.0_1
+ 103 000c FAD1     		bne	.L2	@
+ 104              	@ user/main.c:39: }
+  39:user/main.c   **** }
+ 105              		.loc 1 39 1 view .LVU7
+ 106 000e 02B0     		add	sp, sp, #8	@,,
+ 107              	.LCFI1:
+ 108              		.cfi_def_cfa_offset 0
+ 109              		@ sp needed	@
+ 110 0010 7047     		bx	lr	@
+ 111              		.cfi_endproc
+ 112              	.LFE0:
+ 113              		.size	delay, .-delay
+ 114              		.align	1
+ 115              		.global	GPIOB_ConfigPin15AsOutput
+ 116              		.syntax unified
+ 117              		.thumb
+ 118              		.thumb_func
+ 119              		.type	GPIOB_ConfigPin15AsOutput, %function
+ 120              	GPIOB_ConfigPin15AsOutput:
+ 121              	.LFB1:
+  40:user/main.c   **** /**************************************************************************************************
+  41:user/main.c   **** * @描述	: 配置GPIOB引脚
+  42:user/main.c   **** ***************************************************************************************************
+  43:user/main.c   **** void GPIOB_ConfigPin15AsOutput(void) 
+  44:user/main.c   **** {
+ 122              		.loc 1 44 1 is_stmt 1 view -0
+ 123              		.cfi_startproc
+ 124              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 4
+
+
+ 125              		@ frame_needed = 0, uses_anonymous_args = 0
+ 126              		@ link register save eliminated.
+  45:user/main.c   ****     // 使能GPIOB时钟
+  46:user/main.c   ****     RCC_APB2ENR_REG |= RCC_APB2ENR_IOPBEN;
+ 127              		.loc 1 46 5 view .LVU9
+ 128              	@ user/main.c:46:     RCC_APB2ENR_REG |= RCC_APB2ENR_IOPBEN;
+ 129              		.loc 1 46 21 is_stmt 0 view .LVU10
+ 130 0012 084A     		ldr	r2, .L5	@ tmp118,
+ 131 0014 9369     		ldr	r3, [r2, #24]	@ _2, MEM[(volatile uint32_t *)1073877016B]
+ 132 0016 43F00803 		orr	r3, r3, #8	@ _3, _2,
+ 133 001a 9361     		str	r3, [r2, #24]	@ _3, MEM[(volatile uint32_t *)1073877016B]
+  47:user/main.c   **** 
+  48:user/main.c   ****     // 配置GPIOB引脚15的模式和配置
+  49:user/main.c   ****     uint32_t temp = GPIOB_CRL_REG;
+ 134              		.loc 1 49 5 is_stmt 1 view .LVU11
+ 135              	@ user/main.c:49:     uint32_t temp = GPIOB_CRL_REG;
+ 136              		.loc 1 49 14 is_stmt 0 view .LVU12
+ 137 001c A2F58832 		sub	r2, r2, #69632	@ tmp120, tmp120,
+ 138 0020 D2F8043C 		ldr	r3, [r2, #3076]	@ temp, MEM[(volatile uint32_t *)1073810436B]
+ 139              	.LVL1:
+  50:user/main.c   ****     temp &= ~(0x0F000000); 				 	// 清除
+ 140              		.loc 1 50 5 is_stmt 1 view .LVU13
+  51:user/main.c   ****     temp |= (GPIO_MODE_OUT_50MHZ << 28);  	// 设置MODE15为通用推挽输出模式，最大速�
+ 141              		.loc 1 51 5 view .LVU14
+  52:user/main.c   ****     temp &= ~(0x00F00000);  				// 清除CNF15位（第20-23位）
+ 142              		.loc 1 52 5 view .LVU15
+ 143 0024 23F07F63 		bic	r3, r3, #267386880	@ _1, temp,
+ 144              	.LVL2:
+ 145              	@ user/main.c:52:     temp &= ~(0x00F00000);  				// 清除CNF15位（第20-23位）
+ 146              		.loc 1 52 10 is_stmt 0 view .LVU16
+ 147 0028 43F00053 		orr	r3, r3, #536870912	@ temp, _1,
+ 148              	.LVL3:
+  53:user/main.c   ****     temp |= (GPIO_CNF_PP << 30);  			// 设置CNF15为推挽输出配置
+ 149              		.loc 1 53 5 is_stmt 1 view .LVU17
+  54:user/main.c   ****     GPIOB_CRL_REG = temp;
+ 150              		.loc 1 54 5 view .LVU18
+ 151              	@ user/main.c:54:     GPIOB_CRL_REG = temp;
+ 152              		.loc 1 54 19 is_stmt 0 view .LVU19
+ 153 002c C2F8043C 		str	r3, [r2, #3076]	@ temp, MEM[(volatile uint32_t *)1073810436B]
+ 154              	@ user/main.c:55: }
+  55:user/main.c   **** }
+ 155              		.loc 1 55 1 view .LVU20
+ 156 0030 7047     		bx	lr	@
+ 157              	.L6:
+ 158 0032 00BF     		.align	2
+ 159              	.L5:
+ 160 0034 00100240 		.word	1073876992
+ 161              		.cfi_endproc
+ 162              	.LFE1:
+ 163              		.size	GPIOB_ConfigPin15AsOutput, .-GPIOB_ConfigPin15AsOutput
+ 164              		.section	.text.startup,"ax",%progbits
+ 165              		.align	1
+ 166              		.global	main
+ 167              		.syntax unified
+ 168              		.thumb
+ 169              		.thumb_func
+ 170              		.type	main, %function
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 5
+
+
+ 171              	main:
+ 172              	.LFB2:
+  56:user/main.c   **** /**************************************************************************************************
+  57:user/main.c   **** * @描述	: main
+  58:user/main.c   **** ***************************************************************************************************
+  59:user/main.c   **** int main(void) 
+  60:user/main.c   **** {
+ 173              		.loc 1 60 1 is_stmt 1 view -0
+ 174              		.cfi_startproc
+ 175              		@ Volatile: function does not return.
+ 176              		@ args = 0, pretend = 0, frame = 0
+ 177              		@ frame_needed = 0, uses_anonymous_args = 0
+  61:user/main.c   ****     // 配置GPIOB引脚
+  62:user/main.c   ****     GPIOB_ConfigPin15AsOutput();
+ 178              		.loc 1 62 5 view .LVU22
+ 179              	@ user/main.c:60: {
+  60:user/main.c   ****     // 配置GPIOB引脚
+ 180              		.loc 1 60 1 is_stmt 0 view .LVU23
+ 181 0000 08B5     		push	{r3, lr}	@
+ 182              	.LCFI2:
+ 183              		.cfi_def_cfa_offset 8
+ 184              		.cfi_offset 3, -8
+ 185              		.cfi_offset 14, -4
+ 186              	@ user/main.c:62:     GPIOB_ConfigPin15AsOutput();
+ 187              		.loc 1 62 5 view .LVU24
+ 188 0002 FFF7FEFF 		bl	GPIOB_ConfigPin15AsOutput		@
+ 189              	.LVL4:
+ 190              	@ user/main.c:67:         GPIOB_ODR_REG = GPIO_PIN15;  
+  63:user/main.c   ****     // 主循环
+  64:user/main.c   ****     while (1) 
+  65:user/main.c   **** 	{
+  66:user/main.c   ****         // 切换GPIOB引脚15的状态
+  67:user/main.c   ****         GPIOB_ODR_REG = GPIO_PIN15;  
+ 191              		.loc 1 67 23 view .LVU25
+ 192 0006 48F20004 		movw	r4, 32768	@ movhi	@ MEM[(volatile uint16_t *)1073810444B],
+ 193 000a 0649     		ldr	r1, .L9	@ tmp116,
+ 194              	@ user/main.c:68:         delay(1000000);  // 延时
+  68:user/main.c   ****         delay(1000000);  // 延时
+ 195              		.loc 1 68 9 view .LVU26
+ 196 000c 0648     		ldr	r0, .L9+4	@ tmp129,
+ 197              	.L8:
+  64:user/main.c   **** 	{
+ 198              		.loc 1 64 5 is_stmt 1 discriminator 1 view .LVU27
+  67:user/main.c   ****         delay(1000000);  // 延时
+ 199              		.loc 1 67 9 discriminator 1 view .LVU28
+ 200              	@ user/main.c:67:         GPIOB_ODR_REG = GPIO_PIN15;  
+  67:user/main.c   ****         delay(1000000);  // 延时
+ 201              		.loc 1 67 23 is_stmt 0 discriminator 1 view .LVU29
+ 202 000e 8C81     		strh	r4, [r1, #12]	@ movhi	@ MEM[(volatile uint16_t *)1073810444B], MEM[(volatile uint16_t *)10738
+ 203              		.loc 1 68 9 is_stmt 1 discriminator 1 view .LVU30
+ 204 0010 FFF7FEFF 		bl	delay		@
+ 205              	.LVL5:
+  69:user/main.c   **** 		// 切换GPIOB引脚15的状态
+  70:user/main.c   ****         GPIOB_ODR_REG &= ~GPIO_PIN15;  
+ 206              		.loc 1 70 9 discriminator 1 view .LVU31
+ 207              	@ user/main.c:70:         GPIOB_ODR_REG &= ~GPIO_PIN15;  
+ 208              		.loc 1 70 23 is_stmt 0 discriminator 1 view .LVU32
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 6
+
+
+ 209 0014 8B89     		ldrh	r3, [r1, #12]	@, MEM[(volatile uint16_t *)1073810444B]
+ 210 0016 C3F30E03 		ubfx	r3, r3, #0, #15	@ _2, MEM[(volatile uint16_t *)1073810444B],,
+ 211 001a 8B81     		strh	r3, [r1, #12]	@ movhi	@ _2, MEM[(volatile uint16_t *)1073810444B]
+  71:user/main.c   ****         delay(1000000);  // 延时
+ 212              		.loc 1 71 9 is_stmt 1 discriminator 1 view .LVU33
+ 213 001c FFF7FEFF 		bl	delay		@
+ 214              	.LVL6:
+  64:user/main.c   **** 	{
+ 215              		.loc 1 64 11 discriminator 1 view .LVU34
+ 216 0020 F5E7     		b	.L8		@
+ 217              	.L10:
+ 218 0022 00BF     		.align	2
+ 219              	.L9:
+ 220 0024 000C0140 		.word	1073810432
+ 221 0028 40420F00 		.word	1000000
+ 222              		.cfi_endproc
+ 223              	.LFE2:
+ 224              		.size	main, .-main
+ 225              		.text
+ 226              	.Letext0:
+ 227              		.section	.debug_info,"",%progbits
+ 228              	.Ldebug_info0:
+ 229 0000 E8000000 		.4byte	0xe8
+ 230 0004 0200     		.2byte	0x2
+ 231 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 232 000a 04       		.byte	0x4
+ 233 000b 01       		.uleb128 0x1
+ 234 000c 40000000 		.4byte	.LASF4
+ 235 0010 0C       		.byte	0xc
+ 236 0011 0D000000 		.4byte	.LASF5
+ 237 0015 19000000 		.4byte	.LASF6
+ 238 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 239 001d 00000000 		.4byte	0
+ 240 0021 00000000 		.4byte	0
+ 241 0025 00000000 		.4byte	.Ldebug_line0
+ 242 0029 02       		.uleb128 0x2
+ 243 002a DA000000 		.4byte	.LASF0
+ 244 002e 01       		.byte	0x1
+ 245 002f 08       		.byte	0x8
+ 246 0030 17       		.byte	0x17
+ 247 0031 3A000000 		.4byte	0x3a
+ 248 0035 03       		.uleb128 0x3
+ 249 0036 29000000 		.4byte	0x29
+ 250 003a 04       		.uleb128 0x4
+ 251 003b 04       		.byte	0x4
+ 252 003c 07       		.byte	0x7
+ 253 003d 00000000 		.4byte	.LASF2
+ 254 0041 02       		.uleb128 0x2
+ 255 0042 E9000000 		.4byte	.LASF1
+ 256 0046 01       		.byte	0x1
+ 257 0047 09       		.byte	0x9
+ 258 0048 19       		.byte	0x19
+ 259 0049 4D000000 		.4byte	0x4d
+ 260 004d 04       		.uleb128 0x4
+ 261 004e 02       		.byte	0x2
+ 262 004f 07       		.byte	0x7
+ 263 0050 F2000000 		.4byte	.LASF3
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 7
+
+
+ 264 0054 05       		.uleb128 0x5
+ 265 0055 01       		.byte	0x1
+ 266 0056 0B010000 		.4byte	.LASF7
+ 267 005a 01       		.byte	0x1
+ 268 005b 3B       		.byte	0x3b
+ 269 005c 05       		.byte	0x5
+ 270 005d 01       		.byte	0x1
+ 271 005e 8F000000 		.4byte	0x8f
+ 272 0062 00000000 		.4byte	.LFB2
+ 273 0066 2C000000 		.4byte	.LFE2
+ 274 006a 00000000 		.4byte	.LLST2
+ 275 006e 01       		.byte	0x1
+ 276 006f 8F000000 		.4byte	0x8f
+ 277 0073 06       		.uleb128 0x6
+ 278 0074 06000000 		.4byte	.LVL4
+ 279 0078 96000000 		.4byte	0x96
+ 280 007c 06       		.uleb128 0x6
+ 281 007d 14000000 		.4byte	.LVL5
+ 282 0081 C5000000 		.4byte	0xc5
+ 283 0085 06       		.uleb128 0x6
+ 284 0086 20000000 		.4byte	.LVL6
+ 285 008a C5000000 		.4byte	0xc5
+ 286 008e 00       		.byte	0
+ 287 008f 07       		.uleb128 0x7
+ 288 0090 04       		.byte	0x4
+ 289 0091 05       		.byte	0x5
+ 290 0092 696E7400 		.ascii	"int\000"
+ 291 0096 08       		.uleb128 0x8
+ 292 0097 01       		.byte	0x1
+ 293 0098 C0000000 		.4byte	.LASF8
+ 294 009c 01       		.byte	0x1
+ 295 009d 2B       		.byte	0x2b
+ 296 009e 06       		.byte	0x6
+ 297 009f 01       		.byte	0x1
+ 298 00a0 12000000 		.4byte	.LFB1
+ 299 00a4 38000000 		.4byte	.LFE1
+ 300 00a8 02       		.byte	0x2
+ 301 00a9 7D       		.byte	0x7d
+ 302 00aa 00       		.sleb128 0
+ 303 00ab 01       		.byte	0x1
+ 304 00ac C5000000 		.4byte	0xc5
+ 305 00b0 09       		.uleb128 0x9
+ 306 00b1 10010000 		.4byte	.LASF9
+ 307 00b5 01       		.byte	0x1
+ 308 00b6 31       		.byte	0x31
+ 309 00b7 0E       		.byte	0xe
+ 310 00b8 29000000 		.4byte	0x29
+ 311 00bc 28000000 		.4byte	.LLST1
+ 312 00c0 20000000 		.4byte	.LVUS1
+ 313 00c4 00       		.byte	0
+ 314 00c5 0A       		.uleb128 0xa
+ 315 00c6 01       		.byte	0x1
+ 316 00c7 E3000000 		.4byte	.LASF10
+ 317 00cb 01       		.byte	0x1
+ 318 00cc 21       		.byte	0x21
+ 319 00cd 06       		.byte	0x6
+ 320 00ce 01       		.byte	0x1
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 8
+
+
+ 321 00cf 00000000 		.4byte	.LFB0
+ 322 00d3 12000000 		.4byte	.LFE0
+ 323 00d7 72000000 		.4byte	.LLST0
+ 324 00db 01       		.byte	0x1
+ 325 00dc 0B       		.uleb128 0xb
+ 326 00dd 05010000 		.4byte	.LASF11
+ 327 00e1 01       		.byte	0x1
+ 328 00e2 21       		.byte	0x21
+ 329 00e3 1E       		.byte	0x1e
+ 330 00e4 35000000 		.4byte	0x35
+ 331 00e8 01       		.byte	0x1
+ 332 00e9 50       		.byte	0x50
+ 333 00ea 00       		.byte	0
+ 334 00eb 00       		.byte	0
+ 335              		.section	.debug_abbrev,"",%progbits
+ 336              	.Ldebug_abbrev0:
+ 337 0000 01       		.uleb128 0x1
+ 338 0001 11       		.uleb128 0x11
+ 339 0002 01       		.byte	0x1
+ 340 0003 25       		.uleb128 0x25
+ 341 0004 0E       		.uleb128 0xe
+ 342 0005 13       		.uleb128 0x13
+ 343 0006 0B       		.uleb128 0xb
+ 344 0007 03       		.uleb128 0x3
+ 345 0008 0E       		.uleb128 0xe
+ 346 0009 1B       		.uleb128 0x1b
+ 347 000a 0E       		.uleb128 0xe
+ 348 000b 55       		.uleb128 0x55
+ 349 000c 06       		.uleb128 0x6
+ 350 000d 11       		.uleb128 0x11
+ 351 000e 01       		.uleb128 0x1
+ 352 000f 52       		.uleb128 0x52
+ 353 0010 01       		.uleb128 0x1
+ 354 0011 10       		.uleb128 0x10
+ 355 0012 06       		.uleb128 0x6
+ 356 0013 00       		.byte	0
+ 357 0014 00       		.byte	0
+ 358 0015 02       		.uleb128 0x2
+ 359 0016 16       		.uleb128 0x16
+ 360 0017 00       		.byte	0
+ 361 0018 03       		.uleb128 0x3
+ 362 0019 0E       		.uleb128 0xe
+ 363 001a 3A       		.uleb128 0x3a
+ 364 001b 0B       		.uleb128 0xb
+ 365 001c 3B       		.uleb128 0x3b
+ 366 001d 0B       		.uleb128 0xb
+ 367 001e 39       		.uleb128 0x39
+ 368 001f 0B       		.uleb128 0xb
+ 369 0020 49       		.uleb128 0x49
+ 370 0021 13       		.uleb128 0x13
+ 371 0022 00       		.byte	0
+ 372 0023 00       		.byte	0
+ 373 0024 03       		.uleb128 0x3
+ 374 0025 35       		.uleb128 0x35
+ 375 0026 00       		.byte	0
+ 376 0027 49       		.uleb128 0x49
+ 377 0028 13       		.uleb128 0x13
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 9
+
+
+ 378 0029 00       		.byte	0
+ 379 002a 00       		.byte	0
+ 380 002b 04       		.uleb128 0x4
+ 381 002c 24       		.uleb128 0x24
+ 382 002d 00       		.byte	0
+ 383 002e 0B       		.uleb128 0xb
+ 384 002f 0B       		.uleb128 0xb
+ 385 0030 3E       		.uleb128 0x3e
+ 386 0031 0B       		.uleb128 0xb
+ 387 0032 03       		.uleb128 0x3
+ 388 0033 0E       		.uleb128 0xe
+ 389 0034 00       		.byte	0
+ 390 0035 00       		.byte	0
+ 391 0036 05       		.uleb128 0x5
+ 392 0037 2E       		.uleb128 0x2e
+ 393 0038 01       		.byte	0x1
+ 394 0039 3F       		.uleb128 0x3f
+ 395 003a 0C       		.uleb128 0xc
+ 396 003b 03       		.uleb128 0x3
+ 397 003c 0E       		.uleb128 0xe
+ 398 003d 3A       		.uleb128 0x3a
+ 399 003e 0B       		.uleb128 0xb
+ 400 003f 3B       		.uleb128 0x3b
+ 401 0040 0B       		.uleb128 0xb
+ 402 0041 39       		.uleb128 0x39
+ 403 0042 0B       		.uleb128 0xb
+ 404 0043 27       		.uleb128 0x27
+ 405 0044 0C       		.uleb128 0xc
+ 406 0045 49       		.uleb128 0x49
+ 407 0046 13       		.uleb128 0x13
+ 408 0047 11       		.uleb128 0x11
+ 409 0048 01       		.uleb128 0x1
+ 410 0049 12       		.uleb128 0x12
+ 411 004a 01       		.uleb128 0x1
+ 412 004b 40       		.uleb128 0x40
+ 413 004c 06       		.uleb128 0x6
+ 414 004d 9742     		.uleb128 0x2117
+ 415 004f 0C       		.uleb128 0xc
+ 416 0050 01       		.uleb128 0x1
+ 417 0051 13       		.uleb128 0x13
+ 418 0052 00       		.byte	0
+ 419 0053 00       		.byte	0
+ 420 0054 06       		.uleb128 0x6
+ 421 0055 898201   		.uleb128 0x4109
+ 422 0058 00       		.byte	0
+ 423 0059 11       		.uleb128 0x11
+ 424 005a 01       		.uleb128 0x1
+ 425 005b 31       		.uleb128 0x31
+ 426 005c 13       		.uleb128 0x13
+ 427 005d 00       		.byte	0
+ 428 005e 00       		.byte	0
+ 429 005f 07       		.uleb128 0x7
+ 430 0060 24       		.uleb128 0x24
+ 431 0061 00       		.byte	0
+ 432 0062 0B       		.uleb128 0xb
+ 433 0063 0B       		.uleb128 0xb
+ 434 0064 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 10
+
+
+ 435 0065 0B       		.uleb128 0xb
+ 436 0066 03       		.uleb128 0x3
+ 437 0067 08       		.uleb128 0x8
+ 438 0068 00       		.byte	0
+ 439 0069 00       		.byte	0
+ 440 006a 08       		.uleb128 0x8
+ 441 006b 2E       		.uleb128 0x2e
+ 442 006c 01       		.byte	0x1
+ 443 006d 3F       		.uleb128 0x3f
+ 444 006e 0C       		.uleb128 0xc
+ 445 006f 03       		.uleb128 0x3
+ 446 0070 0E       		.uleb128 0xe
+ 447 0071 3A       		.uleb128 0x3a
+ 448 0072 0B       		.uleb128 0xb
+ 449 0073 3B       		.uleb128 0x3b
+ 450 0074 0B       		.uleb128 0xb
+ 451 0075 39       		.uleb128 0x39
+ 452 0076 0B       		.uleb128 0xb
+ 453 0077 27       		.uleb128 0x27
+ 454 0078 0C       		.uleb128 0xc
+ 455 0079 11       		.uleb128 0x11
+ 456 007a 01       		.uleb128 0x1
+ 457 007b 12       		.uleb128 0x12
+ 458 007c 01       		.uleb128 0x1
+ 459 007d 40       		.uleb128 0x40
+ 460 007e 0A       		.uleb128 0xa
+ 461 007f 9742     		.uleb128 0x2117
+ 462 0081 0C       		.uleb128 0xc
+ 463 0082 01       		.uleb128 0x1
+ 464 0083 13       		.uleb128 0x13
+ 465 0084 00       		.byte	0
+ 466 0085 00       		.byte	0
+ 467 0086 09       		.uleb128 0x9
+ 468 0087 34       		.uleb128 0x34
+ 469 0088 00       		.byte	0
+ 470 0089 03       		.uleb128 0x3
+ 471 008a 0E       		.uleb128 0xe
+ 472 008b 3A       		.uleb128 0x3a
+ 473 008c 0B       		.uleb128 0xb
+ 474 008d 3B       		.uleb128 0x3b
+ 475 008e 0B       		.uleb128 0xb
+ 476 008f 39       		.uleb128 0x39
+ 477 0090 0B       		.uleb128 0xb
+ 478 0091 49       		.uleb128 0x49
+ 479 0092 13       		.uleb128 0x13
+ 480 0093 02       		.uleb128 0x2
+ 481 0094 06       		.uleb128 0x6
+ 482 0095 B742     		.uleb128 0x2137
+ 483 0097 06       		.uleb128 0x6
+ 484 0098 00       		.byte	0
+ 485 0099 00       		.byte	0
+ 486 009a 0A       		.uleb128 0xa
+ 487 009b 2E       		.uleb128 0x2e
+ 488 009c 01       		.byte	0x1
+ 489 009d 3F       		.uleb128 0x3f
+ 490 009e 0C       		.uleb128 0xc
+ 491 009f 03       		.uleb128 0x3
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 11
+
+
+ 492 00a0 0E       		.uleb128 0xe
+ 493 00a1 3A       		.uleb128 0x3a
+ 494 00a2 0B       		.uleb128 0xb
+ 495 00a3 3B       		.uleb128 0x3b
+ 496 00a4 0B       		.uleb128 0xb
+ 497 00a5 39       		.uleb128 0x39
+ 498 00a6 0B       		.uleb128 0xb
+ 499 00a7 27       		.uleb128 0x27
+ 500 00a8 0C       		.uleb128 0xc
+ 501 00a9 11       		.uleb128 0x11
+ 502 00aa 01       		.uleb128 0x1
+ 503 00ab 12       		.uleb128 0x12
+ 504 00ac 01       		.uleb128 0x1
+ 505 00ad 40       		.uleb128 0x40
+ 506 00ae 06       		.uleb128 0x6
+ 507 00af 9742     		.uleb128 0x2117
+ 508 00b1 0C       		.uleb128 0xc
+ 509 00b2 00       		.byte	0
+ 510 00b3 00       		.byte	0
+ 511 00b4 0B       		.uleb128 0xb
+ 512 00b5 05       		.uleb128 0x5
+ 513 00b6 00       		.byte	0
+ 514 00b7 03       		.uleb128 0x3
+ 515 00b8 0E       		.uleb128 0xe
+ 516 00b9 3A       		.uleb128 0x3a
+ 517 00ba 0B       		.uleb128 0xb
+ 518 00bb 3B       		.uleb128 0x3b
+ 519 00bc 0B       		.uleb128 0xb
+ 520 00bd 39       		.uleb128 0x39
+ 521 00be 0B       		.uleb128 0xb
+ 522 00bf 49       		.uleb128 0x49
+ 523 00c0 13       		.uleb128 0x13
+ 524 00c1 02       		.uleb128 0x2
+ 525 00c2 0A       		.uleb128 0xa
+ 526 00c3 00       		.byte	0
+ 527 00c4 00       		.byte	0
+ 528 00c5 00       		.byte	0
+ 529              		.section	.debug_loc,"",%progbits
+ 530              	.Ldebug_loc0:
+ 531              	.LLST2:
+ 532 0000 00000000 		.4byte	.LFB2
+ 533 0004 02000000 		.4byte	.LCFI2
+ 534 0008 0200     		.2byte	0x2
+ 535 000a 7D       		.byte	0x7d
+ 536 000b 00       		.sleb128 0
+ 537 000c 02000000 		.4byte	.LCFI2
+ 538 0010 2C000000 		.4byte	.LFE2
+ 539 0014 0200     		.2byte	0x2
+ 540 0016 7D       		.byte	0x7d
+ 541 0017 08       		.sleb128 8
+ 542 0018 00000000 		.4byte	0
+ 543 001c 00000000 		.4byte	0
+ 544              	.LVUS1:
+ 545 0020 00       		.uleb128 .LVU13
+ 546 0021 01       		.uleb128 .LVU14
+ 547 0022 01       		.uleb128 .LVU14
+ 548 0023 02       		.uleb128 .LVU15
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 12
+
+
+ 549 0024 02       		.uleb128 .LVU15
+ 550 0025 00       		.uleb128 .LVU16
+ 551 0026 00       		.uleb128 .LVU17
+ 552 0027 00       		.uleb128 0
+ 553              	.LLST1:
+ 554 0028 24000000 		.4byte	.LVL1
+ 555 002c 24000000 		.4byte	.LVL1
+ 556 0030 0100     		.2byte	0x1
+ 557 0032 53       		.byte	0x53
+ 558 0033 24000000 		.4byte	.LVL1
+ 559 0037 24000000 		.4byte	.LVL1
+ 560 003b 0A00     		.2byte	0xa
+ 561 003d 73       		.byte	0x73
+ 562 003e 00       		.sleb128 0
+ 563 003f 11       		.byte	0x11
+ 564 0040 FFFFFF87 		.sleb128 -251658241
+ 564      7F
+ 565 0045 1A       		.byte	0x1a
+ 566 0046 9F       		.byte	0x9f
+ 567 0047 24000000 		.4byte	.LVL1
+ 568 004b 28000000 		.4byte	.LVL2
+ 569 004f 0E00     		.2byte	0xe
+ 570 0051 73       		.byte	0x73
+ 571 0052 00       		.sleb128 0
+ 572 0053 11       		.byte	0x11
+ 573 0054 FFFFFF87 		.sleb128 -251658241
+ 573      7F
+ 574 0059 1A       		.byte	0x1a
+ 575 005a 40       		.byte	0x40
+ 576 005b 49       		.byte	0x49
+ 577 005c 24       		.byte	0x24
+ 578 005d 21       		.byte	0x21
+ 579 005e 9F       		.byte	0x9f
+ 580 005f 2C000000 		.4byte	.LVL3
+ 581 0063 38000000 		.4byte	.LFE1
+ 582 0067 0100     		.2byte	0x1
+ 583 0069 53       		.byte	0x53
+ 584 006a 00000000 		.4byte	0
+ 585 006e 00000000 		.4byte	0
+ 586              	.LLST0:
+ 587 0072 00000000 		.4byte	.LFB0
+ 588 0076 02000000 		.4byte	.LCFI0
+ 589 007a 0200     		.2byte	0x2
+ 590 007c 7D       		.byte	0x7d
+ 591 007d 00       		.sleb128 0
+ 592 007e 02000000 		.4byte	.LCFI0
+ 593 0082 10000000 		.4byte	.LCFI1
+ 594 0086 0200     		.2byte	0x2
+ 595 0088 7D       		.byte	0x7d
+ 596 0089 08       		.sleb128 8
+ 597 008a 10000000 		.4byte	.LCFI1
+ 598 008e 12000000 		.4byte	.LFE0
+ 599 0092 0200     		.2byte	0x2
+ 600 0094 7D       		.byte	0x7d
+ 601 0095 00       		.sleb128 0
+ 602 0096 00000000 		.4byte	0
+ 603 009a 00000000 		.4byte	0
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 13
+
+
+ 604              		.section	.debug_aranges,"",%progbits
+ 605 0000 24000000 		.4byte	0x24
+ 606 0004 0200     		.2byte	0x2
+ 607 0006 00000000 		.4byte	.Ldebug_info0
+ 608 000a 04       		.byte	0x4
+ 609 000b 00       		.byte	0
+ 610 000c 0000     		.2byte	0
+ 611 000e 0000     		.2byte	0
+ 612 0010 00000000 		.4byte	.Ltext0
+ 613 0014 38000000 		.4byte	.Letext0-.Ltext0
+ 614 0018 00000000 		.4byte	.LFB2
+ 615 001c 2C000000 		.4byte	.LFE2-.LFB2
+ 616 0020 00000000 		.4byte	0
+ 617 0024 00000000 		.4byte	0
+ 618              		.section	.debug_ranges,"",%progbits
+ 619              	.Ldebug_ranges0:
+ 620 0000 00000000 		.4byte	.Ltext0
+ 621 0004 38000000 		.4byte	.Letext0
+ 622 0008 00000000 		.4byte	.LFB2
+ 623 000c 2C000000 		.4byte	.LFE2
+ 624 0010 00000000 		.4byte	0
+ 625 0014 00000000 		.4byte	0
+ 626              		.section	.debug_line,"",%progbits
+ 627              	.Ldebug_line0:
+ 628 0000 E9000000 		.section	.debug_str,"MS",%progbits,1
+ 628      03002200 
+ 628      00000201 
+ 628      FB0E0D00 
+ 628      01010101 
+ 629              	.LASF2:
+ 630 0000 756E7369 		.ascii	"unsigned int\000"
+ 630      676E6564 
+ 630      20696E74 
+ 630      00
+ 631              	.LASF5:
+ 632 000d 75736572 		.ascii	"user/main.c\000"
+ 632      2F6D6169 
+ 632      6E2E6300 
+ 633              	.LASF6:
+ 634 0019 443A5C6C 		.ascii	"D:\\liwei_gcc_stm32\\stm32f103_gcc\\demo3\000"
+ 634      69776569 
+ 634      5F676363 
+ 634      5F73746D 
+ 634      33325C73 
+ 635              	.LASF4:
+ 636 0040 474E5520 		.ascii	"GNU C17 10.3.1 20210824 (release) -mcpu=cortex-m3 -"
+ 636      43313720 
+ 636      31302E33 
+ 636      2E312032 
+ 636      30323130 
+ 637 0073 6D746875 		.ascii	"mthumb -mfloat-abi=soft -march=armv7-m -g -gdwarf-2"
+ 637      6D62202D 
+ 637      6D666C6F 
+ 637      61742D61 
+ 637      62693D73 
+ 638 00a6 202D4F73 		.ascii	" -Os -fomit-frame-pointer\000"
+ 638      202D666F 
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 14
+
+
+ 638      6D69742D 
+ 638      6672616D 
+ 638      652D706F 
+ 639              	.LASF8:
+ 640 00c0 4750494F 		.ascii	"GPIOB_ConfigPin15AsOutput\000"
+ 640      425F436F 
+ 640      6E666967 
+ 640      50696E31 
+ 640      3541734F 
+ 641              	.LASF0:
+ 642 00da 75696E74 		.ascii	"uint32_t\000"
+ 642      33325F74 
+ 642      00
+ 643              	.LASF10:
+ 644 00e3 64656C61 		.ascii	"delay\000"
+ 644      7900
+ 645              	.LASF1:
+ 646 00e9 75696E74 		.ascii	"uint16_t\000"
+ 646      31365F74 
+ 646      00
+ 647              	.LASF3:
+ 648 00f2 73686F72 		.ascii	"short unsigned int\000"
+ 648      7420756E 
+ 648      7369676E 
+ 648      65642069 
+ 648      6E7400
+ 649              	.LASF11:
+ 650 0105 636F756E 		.ascii	"count\000"
+ 650      7400
+ 651              	.LASF7:
+ 652 010b 6D61696E 		.ascii	"main\000"
+ 652      00
+ 653              	.LASF9:
+ 654 0110 74656D70 		.ascii	"temp\000"
+ 654      00
+ 655              		.ident	"GCC: (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)"
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s:71     .text:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s:77     .text:00000000 delay
+C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s:120    .text:00000012 GPIOB_ConfigPin15AsOutput
+C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s:160    .text:00000034 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s:165    .text.startup:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s:171    .text.startup:00000000 main
+C:\Users\ADMINI~1\AppData\Local\Temp\ccGZ4MAG.s:220    .text.startup:00000024 $d
+
+NO UNDEFINED SYMBOLS
