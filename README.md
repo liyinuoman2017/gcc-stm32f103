@@ -58,7 +58,10 @@ arm-none-eabi-gcc --version
 ```
 
 
+
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/ed695f2fad7647338716942dda9c6bc1.png)
+
+
 
 **成就：完成编译器安装后，我们可以将C程序编译成stm32f103rb能识别的二进制代码。**
 
@@ -98,7 +101,9 @@ https://www.mingw-w64.org/downloads/#winlibscom
 
 将E:\tools\mingw64\bin路径（**每个人的路径可能不一样**）添加到系统环境变量PATH中，这样我们才可以在任意地方执行mingw64\bin中的指令，按照如下步骤将E:\tools\mingw64\bin添加到PATH中。
 
+
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/934a741e467b46948bf0bfbadbfdec66.png)
+
 
 **关键步骤到了：**
 **将E:\tools\mingw64\bin\ming32-make.exe 重命名为 c:\MinGw\bin\make.exe**
@@ -113,7 +118,9 @@ make -v
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/0ad1392c727c44979f7e2a272fa29842.png)
 
 
+
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/21c020ca795446098c10ca185e30c159.png)
+
 
 **至此我们的编译环境搭建完成**，接下来我们就开始编译代码之旅！
 ## 2.编写和编译程序
@@ -139,6 +146,7 @@ arm-none-eabi-gcc -c main.c -o main.o
 
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/33e0371934a7466fa213862ccc29c32c.png)
 
+
 至此我们可以编译得到一个.o文件，这就是我们的第一步。
 
 #### 2.2写一个Makeflie编译C文件
@@ -146,6 +154,7 @@ arm-none-eabi-gcc -c main.c -o main.o
 **我们建立一个src文件夹，和一个Makefile文件，并在src文件夹中创建main.c和test.c两个C文件。**
 
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/3391f9ef55084f35be627f4473247980.png)
+
 
 
 **mian.c内容如下：**
